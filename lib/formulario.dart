@@ -18,7 +18,7 @@ class FormularioState extends State<Formulario>  {
 }
 */
 
-class Formulario extends StatefulWidget{
+class Formulario_login extends StatefulWidget{
   @override
   PasswordState createState() {
     print(" Create de Formulario");
@@ -26,7 +26,7 @@ class Formulario extends StatefulWidget{
   }
 }
 
-class PasswordState extends State<Formulario>  {
+class PasswordState extends State<Formulario_login>  {
 
   bool _mostrar=false;
   doclick(){
@@ -38,31 +38,52 @@ class PasswordState extends State<Formulario>  {
   @override
   Widget build(BuildContext context) {
     return
-      Row(
+      Column(
         children: [
-          Expanded(child:
+          Row(
+            children: [
 
-          TextField(
-            obscureText: !_mostrar,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Password',
-            ),
-          )
+              Expanded(child:
+              TextField(
+                obscureText: !_mostrar,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Text',
+                ),
+              )
+                ,
+              )
+            ],
           ),
-          //--------------------------
-          if(_mostrar)
-            IconButton(
-                icon: Icon(Icons.visibility),
-                onPressed: (){
-                  doclick();
-                })
-          else
-            IconButton(
-                icon: Icon(Icons.visibility_off),
-                onPressed: (){
-                  doclick();
-                })
+
+          Row(
+            children: [
+              Expanded(child:
+              TextField(
+                obscureText: !_mostrar,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                ),
+              )
+                ,
+              ),
+              //--------------------------
+              if(_mostrar)
+                IconButton(
+                    icon: Icon(Icons.visibility),
+                    onPressed: (){
+                      doclick();
+                    })
+              else
+                IconButton(
+                    icon: Icon(Icons.visibility_off),
+                    onPressed: (){
+                      doclick();
+                    })
+            ],
+          )
+
         ],
       )
         ;
