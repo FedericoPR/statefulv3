@@ -20,13 +20,13 @@ class FormularioState extends State<Formulario>  {
 
 class Formulario extends StatefulWidget{
   @override
-  FormularioState createState() {
+  PasswordState createState() {
     print(" Create de Formulario");
-    return new FormularioState();
+    return new PasswordState();
   }
 }
 
-class FormularioState extends State<Formulario>  {
+class PasswordState extends State<Formulario>  {
 
   bool _mostrar=false;
   doclick(){
